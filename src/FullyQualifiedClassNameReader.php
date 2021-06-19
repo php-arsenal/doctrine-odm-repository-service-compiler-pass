@@ -29,7 +29,7 @@ class FullyQualifiedClassNameReader
     {
         preg_match('/(class|trait|interface)\s+([^\s]+)/m', $fileContents, $match);
 
-        return $match[1];
+        return $match[2];
     }
 
     private static function getFilePaths(string $sourceDir): array
