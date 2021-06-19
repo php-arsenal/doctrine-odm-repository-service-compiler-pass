@@ -20,14 +20,14 @@ class FullyQualifiedClassNameReader
 
     private static function getFileNamespace(string $fileContents): string
     {
-        preg_match('/^namespace\s+([^;]+)\s+?;$/', $fileContents, $match);
+        preg_match('/namespace\s+([^;]+);/', $fileContents, $match);
 
         return $match[1];
     }
 
     private static function getFileClassName(string $fileContents): string
     {
-        preg_match('/^class\s+([^{]*)\s+?$/', $fileContents, $match);
+        preg_match('/^class\s+([^{\s]*)/', $fileContents, $match);
 
         return $match[1];
     }
