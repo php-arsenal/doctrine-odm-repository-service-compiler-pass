@@ -4,7 +4,7 @@ Autoconfigure Doctrine ODM document repositories in Symfony as services.
 
 `composer require php-arsenal/doctrine-odm-repository-service-compiler-pass`
 
-# How to use?
+## How to use?
 
 Update your `Kernel` class to add this compiler pass.
 
