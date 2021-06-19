@@ -1,6 +1,6 @@
 # doctrine-odm-repository-service-compiler-pass
 
-Autoconfigure Doctrine ODM document repositories in Symfony as services.
+Autoconfigure Doctrine ODM document repositories in Symfony as services to make them injectable into classes without the need to declare them in `services.yaml`.
 
 `composer require php-arsenal/doctrine-odm-repository-service-compiler-pass`
 
