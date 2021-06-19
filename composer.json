@@ -1,6 +1,6 @@
 {
     "name": "php-arsenal/doctrine-odm-repository-service-compiler-pass",
-    "description": "Autoconfigure document repositories as services.",
+    "description": "Autoconfigure Doctrine ODM document repositories in Symfony as services.",
     "type": "library",
     "license": "MIT",
     "autoload": {
