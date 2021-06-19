@@ -4,7 +4,9 @@
     "type": "library",
     "license": "MIT",
     "autoload": {
-        "PhpArsenal\\DoctrineODMRepositoryServiceCompilerPass\\": "src"
+        "psr-4": {
+            "PhpArsenal\\DoctrineODMRepositoryServiceCompilerPass\\": "src"
+        }
     },
     "require": {
         "php": ">=8.0",
