@@ -1,0 +1,16 @@
+{
+    "name": "php-arsenal/doctrine-odm-repository-service-compiler-pass",
+    "description": "Autoconfigure document repositories as services.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "PhpArsenal\\DoctrineODMRepositoryServiceCompilerPass\\": "src"
+    },
+    "require": {
+        "php": ">=8.0",
+        "symfony/finder": "^5.3",
+        "symfony/dependency-injection": "^5.3",
+        "doctrine/mongodb-odm-bundle": "^4.3",
+        "doctrine/annotations": "^1.13"
+    }
+}
