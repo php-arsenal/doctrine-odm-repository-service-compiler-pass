@@ -23,7 +23,9 @@ class DocumentRepositoryAutoconfigureCompilerPass implements CompilerPassInterfa
     public function process(ContainerBuilder $container)
     {
         foreach ($this->getFullyQualifiedDocumentClassNames($container) as $documentClass) {
-            if ($container->getReflectionClass($documentClass)->isAbstract()) {
+            $reflectionClass = $container->getReflectionClass($documentClass);
+
+            if (!$reflectionClass || $reflectionClass->isAbstract()) {
                 continue;
             }
 
