@@ -30,7 +30,7 @@ class DocumentRepositoryAutoconfigureCompilerPass implements CompilerPassInterfa
             }
 
             /** @var Document $documentAnnotation */
-            $documentAnnotation = $this->annotationReader->getClassAnnotation($container->getReflectionClass($documentClass), Document::class);
+            $documentAnnotation = $this->annotationReader->getClassAnnotation($reflectionClass, Document::class);
             if (!$documentAnnotation) {
                 continue;
             }
