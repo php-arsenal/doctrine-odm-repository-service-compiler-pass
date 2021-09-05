@@ -22,6 +22,8 @@ class DocumentRepositoryAutoconfigureCompilerPass implements CompilerPassInterfa
 
     public function process(ContainerBuilder $container)
     {
+        $documentClasses = [];
+
         foreach ($this->getFullyQualifiedDocumentClassNames($container) as $documentClass) {
             $reflectionClass = $container->getReflectionClass($documentClass);
 
@@ -34,12 +36,16 @@ class DocumentRepositoryAutoconfigureCompilerPass implements CompilerPassInterfa
             if (!$documentAnnotation) {
                 continue;
             }
+
+            $documentClasses[] = $documentClass;
             $documentRepositoryClass = $documentAnnotation->repositoryClass;
 
             if (!in_array($documentRepositoryClass, $container->getServiceIds()) && class_exists($documentRepositoryClass)) {
                 $this->addDocumentRepositoryService($container, $documentClass, $documentRepositoryClass);
             }
         }
+
+        $container->setParameter('doctrine_mongodb.mongodb.odm.document_classes', $documentClasses);
     }
 
     private function getFullyQualifiedDocumentClassNames(ContainerBuilder $container): array

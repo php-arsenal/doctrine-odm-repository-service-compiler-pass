@@ -30,3 +30,5 @@ class Kernel extends BaseKernel
     ...   
 }
 ```
+
+You can also reach defined document classes through parameter `doctrine_mongodb.mongodb.odm.document_classes`
