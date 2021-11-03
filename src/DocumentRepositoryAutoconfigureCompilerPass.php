@@ -50,7 +50,7 @@ class DocumentRepositoryAutoconfigureCompilerPass implements CompilerPassInterfa
 
     private function getFullyQualifiedDocumentClassNames(ContainerBuilder $container): array
     {
-        $doctrineConfig = array_merge(...$container->getExtensionConfig('doctrine_mongodb'));
+        $doctrineConfig = array_merge_recursive(...$container->getExtensionConfig('doctrine_mongodb'));
         $documentDirs = array_map(function (array $mappingConfig) use ($container) {
             return $container->getParameterBag()->resolveValue($mappingConfig['dir']);
         }, $doctrineConfig['document_managers']['default']['mappings']);
