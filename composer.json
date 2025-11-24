@@ -10,8 +10,8 @@
     },
     "require": {
         "php": ">=8.0",
-        "symfony/finder": "^5.3",
-        "symfony/dependency-injection": "^5.3",
+        "symfony/finder": "^5.4|^6.4",
+        "symfony/dependency-injection": "^5.4|^6.4",
         "doctrine/mongodb-odm-bundle": "^4.3",
         "doctrine/annotations": "^1.13"
     }
